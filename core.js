@@ -2,7 +2,7 @@ export default html
 
 function html([first, ...string], ...value) {
     const result = value.reduce(
-        (acc, cur) => [...acc, cur, string.shift()],
+        (acc, cur) => acc.concat(cur, string.shift()),
         [first]
     )
     .filter( x => x && x !== true || x===0)
